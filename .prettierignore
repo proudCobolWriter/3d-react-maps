@@ -1,0 +1,17 @@
+# Folders
+
+logs
+cache
+dist
+dist-ssr
+untracked
+node_modules
+
+# Rule out specific extensions
+
+*.env
+*.local
+
+# Other files
+
+LICENSE
