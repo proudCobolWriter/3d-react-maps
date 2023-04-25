@@ -63,5 +63,5 @@
 		"forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
 	},
 	"include": ["src"],
-	"references": [{ "path": "./tsconfig.node.json" }]
+	"references": [{ "path": "./tsconfig.vite.json" }]
 }

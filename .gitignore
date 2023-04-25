@@ -3,6 +3,7 @@
 logs
 dist
 dist-ssr
+untracked
 node_modules
 
 # Editor directories and files
