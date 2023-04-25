@@ -1,23 +1,27 @@
-import React from "react";
+import React, { type FC } from "react";
+import { Helmet } from "react-helmet-async";
 
-import reactLogo from "../../assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./styles.css";
+// Assets //
 
-export default () => {
+import reactLogo from "../assets/react.svg";
+import "../App.css";
+
+const Home: FC = () => {
 	const [count, setCount] = React.useState(0);
 
 	return (
 		<>
+			<Helmet>
+				<title>Test</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link rel="icon" type="image/svg+xml+x-icon" href="/favicon.ico" />
+			</Helmet>
 			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
 				<a href="https://react.dev" target="_blank">
 					<img src={reactLogo} className="logo react" alt="React logo" />
 				</a>
 			</div>
-			<h1>Vite + React</h1>
+			<h1>React</h1>
 			<div className="card">
 				<button onClick={() => setCount((count) => count + 1)}>
 					count is {count}
@@ -32,3 +36,5 @@ export default () => {
 		</>
 	);
 };
+
+export default Home;
