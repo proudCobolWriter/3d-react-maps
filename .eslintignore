@@ -1,0 +1,10 @@
+logs
+cache
+dist
+dist-ssr
+untracked
+node_modules
+
+*.env
+*.local
+LICENSE

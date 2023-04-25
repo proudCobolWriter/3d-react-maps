@@ -1,0 +1,25 @@
+# Folders
+
+logs
+dist
+dist-ssr
+untracked
+node_modules
+
+# Editor directories and files
+
+.vscode/*
+!.vscode/extensions.json
+.idea
+notes.txt
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Other
+
+*.env
+*.local
