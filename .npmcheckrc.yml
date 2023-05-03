@@ -1,0 +1,4 @@
+# .npmcheckrc
+
+depcheck:
+    ignoreMatches: ["@testing-library/user-event", "identity-obj-proxy"]

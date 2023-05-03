@@ -5,6 +5,8 @@ dist-ssr
 untracked
 node_modules
 
+*.md
 *.env
 *.local
+
 LICENSE

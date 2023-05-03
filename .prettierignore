@@ -9,6 +9,7 @@ node_modules
 
 # Rule out specific extensions
 
+*.md
 *.env
 *.local
 

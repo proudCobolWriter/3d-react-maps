@@ -9,11 +9,9 @@ import "./basic-styling.css";
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);
 
-const helmetContext = {};
-
 root.render(
 	<StrictMode>
-		<HelmetProvider context={helmetContext}>
+		<HelmetProvider>
 			<Router>
 				<App />
 			</Router>

@@ -1,6 +1,14 @@
 import React, { type FC } from "react";
 import { Helmet } from "react-helmet-async";
 
+import { Scene } from "../components";
+
+const { type, title, description } = {
+	type: "a",
+	title: "a",
+	description: "a",
+};
+
 // Assets //
 
 import reactLogo from "../assets/react.svg";
@@ -14,6 +22,9 @@ const Home: FC = () => {
 			<Helmet>
 				<title>Test</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<meta property="og:type" content={type} />
+				<meta property="og:title" content={title} />
+				<meta property="og:description" content={description} />
 				<link rel="icon" type="image/svg+xml+x-icon" href="/favicon.ico" />
 			</Helmet>
 			<div>
@@ -33,6 +44,7 @@ const Home: FC = () => {
 			<p className="read-the-docs">
 				Click on the Vite and React logos to learn more
 			</p>
+			<Scene />
 		</>
 	);
 };
