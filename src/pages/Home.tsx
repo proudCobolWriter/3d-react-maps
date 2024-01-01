@@ -20,7 +20,7 @@ const Home: FC = () => {
 	return (
 		<>
 			<Helmet>
-				<title>Test</title>
+				<title>{import.meta.env.VITE_APP_TITLE}</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta property="og:type" content={type} />
 				<meta property="og:title" content={title} />

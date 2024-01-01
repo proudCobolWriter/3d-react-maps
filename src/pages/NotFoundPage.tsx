@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 const NotFoundPage: FC = () => (
 	<>
-		<h1>ceci est un test!</h1>
+		<h1>404!</h1>
 	</>
 );
 
