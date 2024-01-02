@@ -1,6 +1,6 @@
 import { type FC, useRef } from "react";
 import { Vector3, useFrame } from "@react-three/fiber";
-import { MeshTransmissionMaterial } from "@react-three/drei";
+import { Caustics, MeshTransmissionMaterial } from "@react-three/drei";
 import { useControls } from "leva";
 
 interface IPlanetProps {
@@ -43,6 +43,8 @@ const Planet: FC<IPlanetProps> = (props: IPlanetProps) => {
 					color={color}
 					thickness={thickness}
 					anisotropy={anisotropy}
+					metalness={metalness}
+					roughness={roughness}
 				/>
 			) : (
 				<meshStandardMaterial
