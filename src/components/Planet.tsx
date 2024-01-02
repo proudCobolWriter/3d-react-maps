@@ -1,6 +1,6 @@
 import { type FC, useRef } from "react";
 import { Vector3, useFrame } from "@react-three/fiber";
-import { Caustics, MeshTransmissionMaterial } from "@react-three/drei";
+import { MeshTransmissionMaterial } from "@react-three/drei";
 import { useControls } from "leva";
 
 interface IPlanetProps {
