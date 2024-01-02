@@ -22,8 +22,8 @@ const Planet: FC<IPlanetProps> = (props: IPlanetProps) => {
 	});
 
 	const { metalness, roughness } = useControls("Metalness", {
-		metalness: { value: 0.9, min: 0, max: 1 },
-		roughness: { value: 0.1, min: 0, max: 1 },
+		metalness: { value: 0, min: 0, max: 1 },
+		roughness: { value: 0, min: 0, max: 1 },
 	});
 
 	useFrame((_, delta) => {
