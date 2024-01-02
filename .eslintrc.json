@@ -16,6 +16,7 @@
 			{
 				"prefer": "type-imports"
 			}
-		]
+		],
+		"@typescript-eslint/no-non-null-assertion": true
 	}
 }

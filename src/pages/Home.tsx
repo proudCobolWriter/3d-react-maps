@@ -27,6 +27,7 @@ const Home: FC = () => {
 				<meta property="og:description" content={description} />
 				<link rel="icon" type="image/svg+xml+x-icon" href="/favicon.ico" />
 			</Helmet>
+			<noscript>You need to enable JavaScript to run this app.</noscript>
 			<div>
 				<a href="https://react.dev" target="_blank">
 					<img src={reactLogo} className="logo react" alt="React logo" />
