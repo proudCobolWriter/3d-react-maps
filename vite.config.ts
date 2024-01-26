@@ -10,4 +10,5 @@ export default defineConfig({
 	build: {
 		chunkSizeWarningLimit: 1600,
 	},
+	assetsInclude: ["**/*.gltf", "**/*.glb"],
 });

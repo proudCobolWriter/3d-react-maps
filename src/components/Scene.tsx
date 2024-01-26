@@ -1,60 +1,57 @@
-import { type FC } from "react";
+import { Suspense, type FC } from "react";
 import {
-	AccumulativeShadows,
+	ContactShadows,
 	Environment,
 	OrbitControls,
 	PerspectiveCamera,
-	Plane,
-	RandomizedLight,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import * as THREE from "three";
 
-import { Planet } from "../components";
-
-const degreesToRadians = (degrees: number) => (degrees % 360) * (Math.PI / 180);
+import { Planet, Stars } from "../components";
 
 const Scene: FC = () => {
 	return (
-		<Canvas
-			className="three-canvas"
-			style={{ width: "100vw", height: "100vh", position: "absolute" }}
-			shadows
-		>
-			<color attach="background" args={["#f0f0f0"]} />
-			<ambientLight intensity={Math.PI / 2} />
-			<spotLight
-				position={[10, 10, 10]}
-				angle={0.15}
-				penumbra={1}
-				decay={0}
-				intensity={3}
-				castShadow
-			/>
-			<Planet position={[-2, 0, 0]} />
-			<Planet position={[2, 0, 0]} />
-			<Plane
-				args={[10, 10]}
-				rotation={[Math.PI / 2, 0, 0]}
-				position={[0, -1, 0]}
-				receiveShadow
+		<Suspense fallback={null}>
+			<Canvas
+				className="three-canvas prevent-select"
+				style={{ position: "absolute", width: "100vw", height: "90vh" }}
+				shadows
 			>
-				<meshStandardMaterial color="f0f0f0" side={2} />
-			</Plane>
-			<Environment
-				files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr"
-				blur={0}
-			/>
-			<PerspectiveCamera position={[0, 5, 5]} fov={45} />
-			<OrbitControls
-				makeDefault
-				enableDamping={false}
-				enablePan={false}
-				minPolarAngle={degreesToRadians(0)}
-				maxPolarAngle={degreesToRadians(135)}
-				minDistance={2.5}
-				maxDistance={7.5}
-			/>
-		</Canvas>
+				<ambientLight intensity={Math.PI / 2} />
+				<spotLight
+					position={[10, 10, 10]}
+					angle={0.15}
+					penumbra={1}
+					decay={0}
+					intensity={3}
+				/>
+				<Planet />
+				<ContactShadows
+					frames={1}
+					scale={10}
+					position={[0, -2.0, 0]}
+					far={2.0}
+					blur={5}
+					opacity={0.3}
+					color="#204080"
+				/>
+				<Stars />
+				<Environment preset="city" blur={0} />
+				<OrbitControls
+					makeDefault
+					enableDamping={false}
+					enablePan={false}
+					minPolarAngle={THREE.MathUtils.degToRad(0)}
+					maxPolarAngle={THREE.MathUtils.degToRad(135)}
+					minDistance={1.5}
+					maxDistance={7.5}
+					autoRotate={true}
+					autoRotateSpeed={0.5}
+				/>
+				<PerspectiveCamera makeDefault position={[0, 2.5, 2.5]} fov={45} />
+			</Canvas>
+		</Suspense>
 	);
 };
 

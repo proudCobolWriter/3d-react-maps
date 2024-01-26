@@ -1,8 +1,146 @@
-.three-canvas {
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	overflow: hidden;
+	gap: 20px;
+	background-color: white;
+	padding: 20px 20px;
+	height: 10vh;
+	z-index: 10;
+}
+
+.header > a {
+	color: black;
+	text-decoration: none;
+	height: 100%;
+	font-size: 1.8rem;
+}
+
+@keyframes reactLogoShake {
+	from {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(-45deg);
+	}
+	50% {
+		transform: rotate(45deg);
+	}
+	75% {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+.header > a:not(:nth-child(1))::after {
+	background-color: var(--secondary-color);
+	position: relative;
+	top: -8px;
+	left: 2px;
+	width: 0;
+	height: 5px;
+	content: "";
+	display: block;
+	transition: width 0.35s ease-in-out;
+}
+
+.header > a:not(:nth-child(1)):hover::after,
+.header > a:not(:nth-child(1)):focus:after {
+	width: calc(100% - 2px);
+}
+
+.header > a:nth-child(1) {
+	height: calc(10vh - 20px * 2);
 	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
+	left: 20px;
+}
+
+.header > a:nth-child(1):hover {
+	filter: drop-shadow(0 0 2px #00d8ff);
+	animation: 1.5s ease-in-out normal reactLogoShake infinite;
+}
+
+.logo {
 	width: 100%;
+	height: 100%;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes loadingScreenFadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.fade-out-anim {
+	animation: 1s ease-in-out normal loadingScreenFadeOut;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.loading-data-container {
+	background-color: rgb(15, 15, 15);
+	justify-content: center;
+	position: absolute;
+	opacity: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+.loading-data-container span {
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.loading-data-container > div {
+	width: 180px;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.loading-bar {
+	transition: width 0.5s ease-out;
+	background: #75619c;
+	height: 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px 2px #75619c;
+}
+
+.loading-bar::after {
+	content: "";
+	display: block;
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 45px 2px #75619c;
+}
+
+.prevent-select {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.prevent-drag {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
 }

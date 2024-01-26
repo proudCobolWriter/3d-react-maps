@@ -1,12 +1,16 @@
 import { type FC } from "react";
 
-import { AppRoutes } from "./Routes";
-import { Header } from "./components";
+import * as Layouts from "./Layouts";
+
+// Assets
+
+import "./App.css";
 
 const App: FC = () => (
 	<>
-		<Header />
-		<AppRoutes />
+		<Layouts.Header />
+		<Layouts.Main />
+		<Layouts.Footer />
 	</>
 );
 
