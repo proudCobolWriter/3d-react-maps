@@ -130,7 +130,8 @@
 	box-shadow: 0 0 45px 2px #75619c;
 }
 
-.prevent-select {
+.prevent-select,
+.prevent-select > * {
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
@@ -138,9 +139,28 @@
 	user-select: none;
 }
 
-.prevent-drag {
+.prevent-drag,
+.prevent-drag > * {
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;
 	-moz-user-drag: none;
 	-o-user-drag: none;
+}
+
+.fullscreen-button {
+	position: relative;
+	left: 30px;
+	top: 15px;
+}
+
+.fullscreen-button img {
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.fullscreen-button img:hover {
+	height: 30px;
+	width: 30px;
 }

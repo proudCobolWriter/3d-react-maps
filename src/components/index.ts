@@ -1,3 +1,4 @@
+export { default as FullscreenButton } from "./FullscreenButton";
 export { default as Loader } from "./Loader";
 export { default as Planet } from "./Planet";
 export { default as Marker } from "./Marker";

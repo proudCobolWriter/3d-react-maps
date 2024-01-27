@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import { Helmet } from "react-helmet-async";
 
-import { Scene, Loader } from "../components";
+import { Scene, Loader, FullscreenButton } from "../components";
 
 // Metadata
 
@@ -22,6 +22,7 @@ const Home: FC = () => {
 			</Helmet>
 			<Loader />
 			<Scene />
+			<FullscreenButton />
 		</>
 	);
 };

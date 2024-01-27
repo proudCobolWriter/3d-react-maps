@@ -6,12 +6,14 @@ import * as Layouts from "./Layouts";
 
 import "./App.css";
 
-const App: FC = () => (
-	<>
-		<Layouts.Header />
-		<Layouts.Main />
-		<Layouts.Footer />
-	</>
-);
+const App: FC = () => {
+	return (
+		<>
+			<Layouts.Header />
+			<Layouts.Main />
+			<Layouts.Footer />
+		</>
+	);
+};
 
 export default App;

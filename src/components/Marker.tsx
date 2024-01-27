@@ -1,7 +1,9 @@
 import { type GroupProps, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader.js";
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 import * as THREE from "three";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 import pillarTextureUrl from "../assets/pillar.png?url";
 import circleTextureUrl from "../assets/circle.png?url";
@@ -24,6 +26,12 @@ const Marker: FC<GroupProps> = (props) => {
 
 	const { width, height } = { width: 0.2, height: 0.4 };
 
+	const markerSpriteRef = useRef<THREE.MeshBasicMaterial>(null!);
+
+	useGSAP(() => {
+		gsap.to([markerSpriteRef], { opacity: 0, duration: 3, repeat: -1 });
+	});
+
 	return (
 		<group {...props}>
 			<mesh>
@@ -37,9 +45,11 @@ const Marker: FC<GroupProps> = (props) => {
 			<mesh rotation={[-Math.PI / 2, 0, 0]}>
 				<planeGeometry args={[0.2, 0.2]} />
 				<meshBasicMaterial
+					ref={markerSpriteRef}
 					map={circleColorMap}
 					transparent={true}
 					depthWrite={false}
+					opacity={1}
 				/>
 			</mesh>
 		</group>
